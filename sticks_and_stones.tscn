@@ -5,56 +5,26 @@
 [ext_resource type="Texture2D" uid="uid://b1v08pg3f4xxo" path="res://Assets/Stick_material.png" id="3_2in8l"]
 
 [node name="Sticks_and_Stones" type="Node2D"]
-position = Vector2(231, 237)
 scale = Vector2(10, 10)
 script = ExtResource("1_osq1k")
 
 [node name="Sticks_Stones" type="Sprite2D" parent="."]
 
-[node name="Stone2" type="Sprite2D" parent="Sticks_Stones"]
+[node name="Stone" type="Sprite2D" parent="Sticks_Stones"]
 texture_filter = 1
-position = Vector2(-606, -125)
-texture = ExtResource("2_cchbo")
-
-[node name="Stone3" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(34, 21)
-texture = ExtResource("2_cchbo")
-
-[node name="Stone4" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(-582, -69)
-texture = ExtResource("2_cchbo")
-
-[node name="Stone5" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(-526, -76)
-texture = ExtResource("2_cchbo")
-
-[node name="Stone6" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(-597, -98)
+position = Vector2(56.3, 46.5)
 texture = ExtResource("2_cchbo")
 
 [node name="Stick" type="Sprite2D" parent="Sticks_Stones"]
 texture_filter = 1
-position = Vector2(-573, -81)
-texture = ExtResource("3_2in8l")
-
-[node name="Stick3" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(23, 12)
-texture = ExtResource("3_2in8l")
-
-[node name="Stick5" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(-578, -62)
+position = Vector2(45.2, 37.5)
 texture = ExtResource("3_2in8l")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 11.0
-offset_top = -9.0
-offset_right = 46.0
-offset_bottom = 23.0
+show_behind_parent = true
+offset_left = 36.5
+offset_top = 19.2
+offset_right = 71.5
+offset_bottom = 51.2
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
