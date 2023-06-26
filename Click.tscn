@@ -1,9 +1,121 @@
-[gd_scene load_steps=2 format=3 uid="uid://me4l63d6xiqm"]
+[gd_scene load_steps=7 format=3 uid="uid://me4l63d6xiqm"]
 
 [ext_resource type="Texture2D" uid="uid://dvaa4phb84m6o" path="res://Assets/Axe_item.png" id="1_jiegb"]
+[ext_resource type="Texture2D" uid="uid://cs1c7xc04fgny" path="res://Assets/Tree_1.png" id="1_o6nlb"]
+[ext_resource type="Texture2D" uid="uid://xpuin1eb5qd7" path="res://Assets/Tree_2.png" id="3_s66te"]
+[ext_resource type="Texture2D" uid="uid://j7ro4h38gf4b" path="res://Assets/tree_with_bush.png" id="4_rqrvg"]
+[ext_resource type="Texture2D" uid="uid://bx1dwnivrcm7x" path="res://Assets/bush.png" id="5_4o5qc"]
+[ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="6_0iual"]
 
 [node name="Click" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Tree" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(24, 49)
+texture = ExtResource("1_o6nlb")
 
 [node name="Axe" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(98, 170)
 texture = ExtResource("1_jiegb")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-46, 54)
+texture = ExtResource("1_o6nlb")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-73, 86)
+texture = ExtResource("1_o6nlb")
+
+[node name="Tree4" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, 102)
+texture = ExtResource("1_o6nlb")
+
+[node name="Tree5" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-124, 54)
+texture = ExtResource("1_o6nlb")
+
+[node name="Tree6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-19, -3)
+texture = ExtResource("3_s66te")
+
+[node name="Tree7" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(54, 89)
+texture = ExtResource("3_s66te")
+
+[node name="Tree8" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(54, 4)
+texture = ExtResource("3_s66te")
+
+[node name="Tree9" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-93, 35)
+texture = ExtResource("3_s66te")
+
+[node name="Tree10" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-102, 115)
+texture = ExtResource("4_rqrvg")
+
+[node name="Tree11" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, 17)
+texture = ExtResource("4_rqrvg")
+
+[node name="Tree12" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-145, 39)
+texture = ExtResource("4_rqrvg")
+
+[node name="Tree13" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-49, -2)
+texture = ExtResource("4_rqrvg")
+
+[node name="Bush" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-105, -19)
+texture = ExtResource("5_4o5qc")
+
+[node name="Bush2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-68, 26)
+texture = ExtResource("5_4o5qc")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(26, -38)
+texture = ExtResource("5_4o5qc")
+
+[node name="Berry_bush" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-13, 61)
+texture = ExtResource("6_0iual")
+
+[node name="Berry_bush2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(32, 84)
+texture = ExtResource("6_0iual")
+
+[node name="Berry_bush3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(50, 24)
+texture = ExtResource("6_0iual")
+
+[node name="Berry_bush4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, 124)
+texture = ExtResource("6_0iual")
