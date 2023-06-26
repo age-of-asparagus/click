@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://me4l63d6xiqm"]
+
+[ext_resource type="Texture2D" uid="uid://dvaa4phb84m6o" path="res://Assets/Axe_item.png" id="1_jiegb"]
+
+[node name="Click" type="Node2D"]
+
+[node name="Axe" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jiegb")
