@@ -10,7 +10,6 @@
 load_path = "res://.godot/imported/Tree_1.png-7e653e0549934ad6f1b7f1743cc6c78e.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m386o"]
-load_path = "res://.godot/imported/Tree_1 (2).png-fd6b04b7c30364f72054048af0eb352c.ctex"
 
 [node name="Click" type="Node2D"]
 y_sort_enabled = true
