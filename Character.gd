@@ -1,32 +1,36 @@
 extends CharacterBody2D
 
 @export var speed = 100
-var time = 0
 
+@onready var sprite: Sprite2D = $Sprite
+@export var max_speed: = 500.0
 
-# Called when the node enters the scene tree for the first time.
+const DISTANCE_THRESHOLD: = 3.0
+const SLOW_RADIUS = 300
+var target_global_pos: Vector2 = Vector2.ZERO
+
 func _ready():
-	pass # Replace with function body.
+	set_physics_process(false)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	time += delta
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-		
-	if velocity != Vector2.ZERO:
-		$Sprite.rotation += delta * 10 * sign(velocity.x)
-		
-		$Sprite.rotation += sin(time * 10 )* 0.1 * velocity.y
-		
-	velocity = velocity.normalized() * speed
-
+func _unhandled_input(event):
+	if event.is_action_pressed("click"):
+		target_global_pos = get_global_mouse_position()
+		set_physics_process(true)
+	
+	
+func _physics_process(_delta):
+	if Input.is_action_pressed("click"):
+		target_global_pos = get_global_mouse_position()
+	if global_position.distance_to(target_global_pos) < DISTANCE_THRESHOLD:
+		set_physics_process(false)
+	
+	velocity = Steering.arrive_to(
+		velocity,
+		global_position,
+		target_global_pos,
+		max_speed,
+		SLOW_RADIUS
+	)
+	
 	move_and_slide()
+	sprite.rotation = velocity.angle()

@@ -1,16 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://desrfuxxfdiqd"]
+[gd_scene load_steps=8 format=3 uid="uid://desrfuxxfdiqd"]
 
 [ext_resource type="Texture2D" uid="uid://c7pqdb0eo2j4p" path="res://Assets/Pickaxe_item.png" id="1_an8t7"]
 [ext_resource type="Script" path="res://Character.gd" id="2_x20wl"]
+[ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="4_3c70p"]
+[ext_resource type="PackedScene" uid="uid://cr0bf2jkb3cav" path="res://UI/Target.tscn" id="4_s71j7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xmpn"]
-radius = 15.0
-height = 32.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s10l6"]
+radius = 7.5
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2es55"]
+load_path = "res://.godot/imported/Tree_2.png-a8bee7e42dde74f4cead488c2bb80fab.ctex"
 
 [node name="Overworld" type="Node2D"]
+y_sort_enabled = true
+texture_filter = 1
 
 [node name="Character" type="CharacterBody2D" parent="."]
 position = Vector2(452, 352)
+scale = Vector2(2, 2)
+collision_mask = 2
 script = ExtResource("2_x20wl")
 
 [node name="Sprite" type="Sprite2D" parent="Character"]
@@ -20,3 +31,38 @@ texture = ExtResource("1_an8t7")
 position = Vector2(-1, -4)
 shape = SubResource("CapsuleShape2D_1xmpn")
 metadata/_edit_group_ = true
+
+[node name="BerryBush" type="Sprite2D" parent="."]
+position = Vector2(604, 292)
+scale = Vector2(2, 2)
+texture = ExtResource("4_3c70p")
+region_enabled = true
+region_rect = Rect2(0, 21.8917, 47.5, 42.1607)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BerryBush"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BerryBush/StaticBody2D"]
+position = Vector2(0, 6)
+rotation = -1.57079
+shape = SubResource("CircleShape2D_s10l6")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(785, 214)
+scale = Vector2(2, 2)
+texture = SubResource("CompressedTexture2D_2es55")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree2"]
+position = Vector2(-6.5, 18.5)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2/StaticBody2D"]
+position = Vector2(0, 6)
+rotation = -1.57079
+shape = SubResource("CircleShape2D_s10l6")
+
+[node name="Target" parent="." instance=ExtResource("4_s71j7")]
