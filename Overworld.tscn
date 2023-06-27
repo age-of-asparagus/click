@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="4_3c70p"]
 [ext_resource type="Texture2D" uid="uid://b2rnhoxom400x" path="res://Assets/Tree_1.png" id="4_emnnw"]
 [ext_resource type="PackedScene" uid="uid://cr0bf2jkb3cav" path="res://UI/Target.tscn" id="4_s71j7"]
-[ext_resource type="PackedScene" path="res://ClickerObject.tscn" id="5_a3yow"]
+[ext_resource type="PackedScene" uid="uid://b1a4rr8aancd" path="res://ClickerObject.tscn" id="5_a3yow"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xmpn"]
 height = 20.0
@@ -23,8 +23,7 @@ y_sort_enabled = true
 texture_filter = 1
 
 [node name="Character" type="CharacterBody2D" parent="."]
-position = Vector2(452, 352)
-scale = Vector2(2, 2)
+position = Vector2(291, 225)
 collision_mask = 2
 script = ExtResource("2_x20wl")
 
@@ -45,8 +44,7 @@ position = Vector2(-1, -4)
 shape = SubResource("CircleShape2D_jq2qw")
 
 [node name="BerryBush" type="Sprite2D" parent="."]
-position = Vector2(604, 292)
-scale = Vector2(2, 2)
+position = Vector2(94.5, 165)
 texture = ExtResource("4_3c70p")
 region_enabled = true
 region_rect = Rect2(0, 21.8917, 47.5, 42.1607)
@@ -62,8 +60,7 @@ rotation = -1.57079
 shape = SubResource("CircleShape2D_s10l6")
 
 [node name="Tree_1" type="Sprite2D" parent="."]
-position = Vector2(785, 214)
-scale = Vector2(2, 2)
+position = Vector2(275.5, 87)
 texture = SubResource("CompressedTexture2D_2es55")
 metadata/_edit_group_ = true
 
@@ -78,8 +75,7 @@ rotation = -1.57079
 shape = SubResource("CircleShape2D_s10l6")
 
 [node name="Tree_2" type="Sprite2D" parent="."]
-position = Vector2(523, 198)
-scale = Vector2(2, 2)
+position = Vector2(140, 47)
 texture = ExtResource("4_emnnw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tree_2"]
@@ -95,6 +91,6 @@ shape = SubResource("CircleShape2D_s10l6")
 [node name="Target" parent="." instance=ExtResource("4_s71j7")]
 
 [node name="ClickerObject" parent="." instance=ExtResource("5_a3yow")]
-position = Vector2(1005, 507)
+position = Vector2(335, 150)
 
 [connection signal="area_shape_entered" from="Character/ClickerDetector" to="Character" method="_on_clicker_detector_area_shape_entered"]
