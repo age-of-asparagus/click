@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://desrfuxxfdiqd"]
+[gd_scene load_steps=10 format=3 uid="uid://desrfuxxfdiqd"]
 
 [ext_resource type="Texture2D" uid="uid://c7pqdb0eo2j4p" path="res://Assets/Pickaxe_item.png" id="1_an8t7"]
 [ext_resource type="Script" path="res://Character.gd" id="2_x20wl"]
 [ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="4_3c70p"]
 [ext_resource type="PackedScene" uid="uid://cr0bf2jkb3cav" path="res://UI/Target.tscn" id="4_s71j7"]
+[ext_resource type="PackedScene" uid="uid://b1a4rr8aancd" path="res://ClickerObject.tscn" id="5_a3yow"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xmpn"]
 height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jq2qw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s10l6"]
 radius = 7.5
@@ -31,6 +34,14 @@ texture = ExtResource("1_an8t7")
 position = Vector2(-1, -4)
 shape = SubResource("CapsuleShape2D_1xmpn")
 metadata/_edit_group_ = true
+
+[node name="ClickerDetector" type="Area2D" parent="Character"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/ClickerDetector"]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_jq2qw")
 
 [node name="BerryBush" type="Sprite2D" parent="."]
 position = Vector2(604, 292)
@@ -66,3 +77,8 @@ rotation = -1.57079
 shape = SubResource("CircleShape2D_s10l6")
 
 [node name="Target" parent="." instance=ExtResource("4_s71j7")]
+
+[node name="ClickerObject" parent="." instance=ExtResource("5_a3yow")]
+position = Vector2(1005, 507)
+
+[connection signal="area_shape_entered" from="Character/ClickerDetector" to="Character" method="_on_clicker_detector_area_shape_entered"]

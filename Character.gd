@@ -34,3 +34,8 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	sprite.rotation = velocity.angle()
+
+
+func _on_clicker_detector_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	print("Clicker!")
+	get_tree().change_scene_to_file("res://sticks_and_stones.tscn")
