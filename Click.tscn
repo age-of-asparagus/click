@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://me4l63d6xiqm"]
+[gd_scene load_steps=8 format=3 uid="uid://me4l63d6xiqm"]
 
 [ext_resource type="Texture2D" uid="uid://dvaa4phb84m6o" path="res://Assets/Axe_item.png" id="1_jiegb"]
-[ext_resource type="Texture2D" uid="uid://cs1c7xc04fgny" path="res://Assets/Tree_1.png" id="1_o6nlb"]
 [ext_resource type="Texture2D" uid="uid://xpuin1eb5qd7" path="res://Assets/Tree_2.png" id="3_s66te"]
 [ext_resource type="Texture2D" uid="uid://j7ro4h38gf4b" path="res://Assets/tree_with_bush.png" id="4_rqrvg"]
 [ext_resource type="Texture2D" uid="uid://bx1dwnivrcm7x" path="res://Assets/bush.png" id="5_4o5qc"]
 [ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="6_0iual"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_316se"]
+load_path = "res://.godot/imported/Tree_1.png-7e653e0549934ad6f1b7f1743cc6c78e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m386o"]
+load_path = "res://.godot/imported/Tree_1 (2).png-fd6b04b7c30364f72054048af0eb352c.ctex"
 
 [node name="Click" type="Node2D"]
 y_sort_enabled = true
@@ -14,7 +19,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(24, 49)
-texture = ExtResource("1_o6nlb")
+texture = SubResource("CompressedTexture2D_316se")
 
 [node name="Axe" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -25,25 +30,25 @@ texture = ExtResource("1_jiegb")
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-46, 54)
-texture = ExtResource("1_o6nlb")
+texture = SubResource("CompressedTexture2D_316se")
 
 [node name="Tree3" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-73, 86)
-texture = ExtResource("1_o6nlb")
+texture = SubResource("CompressedTexture2D_316se")
 
 [node name="Tree4" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 102)
-texture = ExtResource("1_o6nlb")
+texture = SubResource("CompressedTexture2D_316se")
 
 [node name="Tree5" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-124, 54)
-texture = ExtResource("1_o6nlb")
+texture = SubResource("CompressedTexture2D_316se")
 
 [node name="Tree6" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -119,3 +124,13 @@ texture = ExtResource("6_0iual")
 texture_filter = 1
 position = Vector2(-4, 124)
 texture = ExtResource("6_0iual")
+
+[node name="Tree1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(319, 151)
+texture = SubResource("CompressedTexture2D_316se")
+
+[node name="Tree1(2)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(266, 150)
+texture = SubResource("CompressedTexture2D_m386o")

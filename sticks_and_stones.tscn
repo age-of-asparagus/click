@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8oo54sj4jvrt"]
+[gd_scene load_steps=4 format=3 uid="uid://b8oo54sj4jvrt"]
 
 [ext_resource type="Script" path="res://Sticks_and_Stones.gd" id="1_osq1k"]
+[ext_resource type="Texture2D" uid="uid://cysj8y6ho8bsx" path="res://Assets/Stone_material.png" id="2_nofqp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wueub"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.607843, 0.607843, 0.607843, 0.6)
 
 [node name="Sticks_and_Stones" type="Node2D"]
 scale = Vector2(5, 5)
@@ -14,6 +24,32 @@ autostart = true
 [node name="Stone_spawn_timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0.231373)
+offset_left = -83.0
+offset_top = 121.0
+offset_right = -3.0
+offset_bottom = 161.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wueub")
+metadata/_edit_group_ = true
+
+[node name="stone_label" type="Sprite2D" parent="CanvasLayer/Panel"]
+top_level = true
+texture_filter = 1
+position = Vector2(61, 28)
+texture = ExtResource("2_nofqp")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+top_level = true
+layout_mode = 2
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 33.0
+text = "x0"
 
 [connection signal="timeout" from="Stick_spawn_timer" to="." method="_on_stick_spawn_timer_timeout"]
 [connection signal="timeout" from="Stone_spawn_timer" to="." method="_on_stone_spawn_timer_timeout"]
