@@ -1,32 +1,25 @@
 extends CharacterBody2D
 
 @export var speed = 100
+
+@onready var sprite: Sprite2D = $Sprite
+@export var max_speed: = 500.0
 var time = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	time += delta
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-		
-	if velocity != Vector2.ZERO:
-		$Sprite.rotation += delta * 10 * sign(velocity.x)
-		
-		$Sprite.rotation += sin(time * 10 )* 0.1 * velocity.y
-		
-	velocity = velocity.normalized() * speed
-
+	
+	
+func _physics_process(delta):
+	var target_global_pos: Vector2 = get_global_mouse_position()
+	
+	velocity = Steering.follow(
+		velocity,
+		global_position,
+		target_global_pos,
+		max_speed
+	)
+	
 	move_and_slide()

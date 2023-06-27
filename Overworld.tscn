@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://desrfuxxfdiqd"]
+[gd_scene load_steps=6 format=3 uid="uid://desrfuxxfdiqd"]
 
 [ext_resource type="Texture2D" uid="uid://c7pqdb0eo2j4p" path="res://Assets/Pickaxe_item.png" id="1_an8t7"]
+[ext_resource type="Texture2D" uid="uid://bv07clnvikwhh" path="res://icon.svg" id="1_nvt84"]
 [ext_resource type="Script" path="res://Character.gd" id="2_x20wl"]
+[ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="4_3c70p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xmpn"]
 radius = 15.0
 height = 32.0
 
 [node name="Overworld" type="Node2D"]
+texture_filter = 1
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 0.313726)
+texture_filter = 1
+position = Vector2(576, 326)
+scale = Vector2(8.98438, 5.04688)
+texture = ExtResource("1_nvt84")
 
 [node name="Character" type="CharacterBody2D" parent="."]
 position = Vector2(452, 352)
@@ -20,3 +30,7 @@ texture = ExtResource("1_an8t7")
 position = Vector2(-1, -4)
 shape = SubResource("CapsuleShape2D_1xmpn")
 metadata/_edit_group_ = true
+
+[node name="BerryBush" type="Sprite2D" parent="."]
+position = Vector2(659, 353)
+texture = ExtResource("4_3c70p")
