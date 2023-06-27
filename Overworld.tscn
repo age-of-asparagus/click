@@ -15,12 +15,13 @@ texture_filter = 1
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 1, 0.313726)
 texture_filter = 1
-position = Vector2(576, 326)
-scale = Vector2(8.98438, 5.04688)
+position = Vector2(399.5, 301.5)
+scale = Vector2(6.22656, 4.66406)
 texture = ExtResource("1_nvt84")
 
 [node name="Character" type="CharacterBody2D" parent="."]
 position = Vector2(452, 352)
+scale = Vector2(2, 2)
 script = ExtResource("2_x20wl")
 
 [node name="Sprite" type="Sprite2D" parent="Character"]
@@ -32,5 +33,8 @@ shape = SubResource("CapsuleShape2D_1xmpn")
 metadata/_edit_group_ = true
 
 [node name="BerryBush" type="Sprite2D" parent="."]
-position = Vector2(659, 353)
+position = Vector2(639, 336)
+scale = Vector2(2, 2)
 texture = ExtResource("4_3c70p")
+region_enabled = true
+region_rect = Rect2(0, 21.8917, 47.5, 42.1607)

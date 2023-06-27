@@ -17,13 +17,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-
 Steering="*res://Autoloads/Steering.gd"
 Global="*res://global.gd"
 
-
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 
 [rendering]
