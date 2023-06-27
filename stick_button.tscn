@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfdrhbf07b6b7"]
+
+[ext_resource type="Texture2D" uid="uid://b1v08pg3f4xxo" path="res://Assets/Stick_material.png" id="1_3omv2"]
+[ext_resource type="Script" path="res://stick_button.gd" id="1_3wxgu"]
+
+[node name="Stick_button" type="Button"]
+offset_right = 11.0
+offset_bottom = 37.0
+flat = true
+script = ExtResource("1_3wxgu")
+
+[node name="Stick" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9.62317, 24.4345)
+rotation = -0.754653
+texture = ExtResource("1_3omv2")
+
+[node name="Disappear timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="timeout" from="Disappear timer" to="." method="_on_disappear_timer_timeout"]

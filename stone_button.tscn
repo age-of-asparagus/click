@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg065rqv367lt"]
+
+[ext_resource type="Texture2D" uid="uid://cysj8y6ho8bsx" path="res://Assets/Stone_material.png" id="1_h8sma"]
+[ext_resource type="Script" path="res://stone_button.gd" id="1_qnnn0"]
+
+[node name="Stone_button" type="Button"]
+offset_right = 29.0
+offset_bottom = 22.0
+flat = true
+script = ExtResource("1_qnnn0")
+
+[node name="Stone" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(16, 19)
+texture = ExtResource("1_h8sma")
+
+[node name="Disappear timer" type="Timer" parent="."]
+wait_time = 1.25
+autostart = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="timeout" from="Disappear timer" to="." method="_on_disappear_timer_timeout"]

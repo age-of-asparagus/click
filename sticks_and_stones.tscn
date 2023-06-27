@@ -1,30 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8oo54sj4jvrt"]
+[gd_scene load_steps=2 format=3 uid="uid://b8oo54sj4jvrt"]
 
 [ext_resource type="Script" path="res://Sticks_and_Stones.gd" id="1_osq1k"]
-[ext_resource type="Texture2D" uid="uid://cysj8y6ho8bsx" path="res://Assets/Stone_material.png" id="2_cchbo"]
-[ext_resource type="Texture2D" uid="uid://b1v08pg3f4xxo" path="res://Assets/Stick_material.png" id="3_2in8l"]
 
 [node name="Sticks_and_Stones" type="Node2D"]
-scale = Vector2(10, 10)
+scale = Vector2(5, 5)
 script = ExtResource("1_osq1k")
 
-[node name="Sticks_Stones" type="Sprite2D" parent="."]
+[node name="Spawn_timer" type="Timer" parent="."]
+autostart = true
 
-[node name="Stone" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(56.3, 46.5)
-texture = ExtResource("2_cchbo")
-
-[node name="Stick" type="Sprite2D" parent="Sticks_Stones"]
-texture_filter = 1
-position = Vector2(45.2, 37.5)
-texture = ExtResource("3_2in8l")
-
-[node name="Button" type="Button" parent="."]
-show_behind_parent = true
-offset_left = 36.5
-offset_top = 19.2
-offset_right = 71.5
-offset_bottom = 51.2
-
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]
