@@ -11,6 +11,7 @@ var target_global_pos: Vector2 = Vector2.ZERO
 
 func _ready():
 	set_physics_process(false)
+	print("x " + str(SLOW_RADIUS))
 
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
