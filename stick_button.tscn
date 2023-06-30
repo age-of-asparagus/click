@@ -1,24 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfdrhbf07b6b7"]
+[gd_scene load_steps=6 format=3 uid="uid://cfdrhbf07b6b7"]
 
 [ext_resource type="Script" path="res://stick_button.gd" id="1_3wxgu"]
 [ext_resource type="Texture2D" uid="uid://dqm7koag71jgr" path="res://Assets/Stick_material-1.png.png" id="2_k8vuv"]
 
-[node name="Stick_button" type="Button"]
-offset_right = 11.0
-offset_bottom = 36.0
-flat = true
-script = ExtResource("1_3wxgu")
+[sub_resource type="Animation" id="Animation_w7mho"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
-[node name="Stick" type="Sprite2D" parent="."]
+[sub_resource type="Animation" id="Animation_wmlac"]
+resource_name = "size"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nyvr1"]
+_data = {
+"RESET": SubResource("Animation_w7mho"),
+"size": SubResource("Animation_wmlac")
+}
+
+[node name="Stick" type="Sprite2D"]
 texture_filter = 1
-position = Vector2(5, 18)
-rotation = -0.754653
+position = Vector2(3, 4)
 texture = ExtResource("2_k8vuv")
+script = ExtResource("1_3wxgu")
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Stick_button")
+libraries = {
+"": SubResource("AnimationLibrary_nyvr1")
+}
+
+[node name="Stick_button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.662
+anchor_top = 0.22575
+anchor_right = 0.662
+anchor_bottom = 0.22575
+offset_left = -58.368
+offset_top = -7.448
+offset_right = -22.368
+offset_bottom = 2.552
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.749397
+flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Disappear timer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
 autostart = true
 
-[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_down" from="Stick_button" to="." method="_on_stick_button_button_down"]
+[connection signal="mouse_entered" from="Stick_button" to="." method="_on_stick_button_mouse_entered"]
 [connection signal="timeout" from="Disappear timer" to="." method="_on_disappear_timer_timeout"]
