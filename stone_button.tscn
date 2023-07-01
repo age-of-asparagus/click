@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg065rqv367lt"]
+[gd_scene load_steps=7 format=3 uid="uid://dg065rqv367lt"]
 
 [ext_resource type="Script" path="res://stone_button.gd" id="1_avf5j"]
 [ext_resource type="Texture2D" uid="uid://vd3un27assnc" path="res://Assets/Stone_material-1.png.png" id="2_iqjpu"]
@@ -40,6 +40,9 @@ _data = {
 "size": SubResource("Animation_f02gc")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0bak0"]
+radius = 13.0
+
 [node name="Stone" type="Sprite2D"]
 texture_filter = 1
 position = Vector2(14, 10)
@@ -47,7 +50,7 @@ texture = ExtResource("2_iqjpu")
 script = ExtResource("1_avf5j")
 metadata/_edit_group_ = true
 
-[node name="Stone_button" type="Button" parent="."]
+[node name="Stone_button" type="TextureButton" parent="."]
 show_behind_parent = true
 anchors_preset = -1
 anchor_left = 0.281
@@ -59,7 +62,6 @@ offset_top = -32.016
 offset_right = -4.984
 offset_bottom = -12.016
 size_flags_stretch_ratio = 0.0
-flat = true
 
 [node name="Disappear timer" type="Timer" parent="."]
 wait_time = 1.25
@@ -71,6 +73,10 @@ libraries = {
 "": SubResource("AnimationLibrary_5ax1x")
 }
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0bak0")
+
 [connection signal="button_down" from="Stone_button" to="." method="_on_stone_button_button_down"]
-[connection signal="mouse_entered" from="Stone_button" to="." method="_on_stone_button_mouse_entered"]
 [connection signal="timeout" from="Disappear timer" to="." method="_on_disappear_timer_timeout"]

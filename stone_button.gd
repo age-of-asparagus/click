@@ -1,14 +1,21 @@
 extends Sprite2D
 
+@onready var mouse = get_parent().get_node("Mouse_area")
 var clicked = false
 var speed = 3
 var stone_label_position
 
-func _ready():
-	$Stone_button.size *= get_parent(). magnet_size
-	$Stone_button.position *= get_parent(). magnet_size
 
 func _physics_process(delta):
+	if $Area2D.overlaps_area(mouse) == true:
+		if Global.Stick_Stones_hover_mode == true:
+			stone_label_position = get_parent().get_node("Stone_panel/TextureRect").global_position
+			clicked = true
+			$Stone_button.disabled = true
+			$Stone_button.visible = false
+			$AnimationPlayer.play("size")
+
+	
 	if clicked == true:
 		if speed <= 12:
 			speed *= 1.05
@@ -28,7 +35,7 @@ func _on_disappear_timer_timeout():
 
 
 func _on_stone_button_button_down():
-	if get_parent().hover_mode == false:
+	if Global.Stick_Stones_hover_mode == false:
 		stone_label_position = get_parent().get_node("Stone_panel/TextureRect").global_position
 		clicked = true
 		$Stone_button.disabled = true
@@ -36,11 +43,4 @@ func _on_stone_button_button_down():
 		$AnimationPlayer.play("size")
 
 
-func _on_stone_button_mouse_entered():
-	if get_parent().hover_mode == true:
-		stone_label_position = get_parent().get_node("Stone_panel/TextureRect").global_position
-		clicked = true
-		$Stone_button.disabled = true
-		$Stone_button.visible = false
-		$AnimationPlayer.play("size")
 

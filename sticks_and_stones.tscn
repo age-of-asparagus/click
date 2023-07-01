@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8oo54sj4jvrt"]
+[gd_scene load_steps=14 format=3 uid="uid://b8oo54sj4jvrt"]
 
 [ext_resource type="Script" path="res://Sticks_and_Stones.gd" id="1_osq1k"]
 [ext_resource type="Texture2D" uid="uid://dqm7koag71jgr" path="res://Assets/Stick_material-1.png.png" id="3_4t7gx"]
 [ext_resource type="FontFile" uid="uid://bo7gknk7gxrm2" path="res://Fonts/PublicPixel-z84yD.ttf" id="3_7tlbq"]
 [ext_resource type="Texture2D" uid="uid://vd3un27assnc" path="res://Assets/Stone_material-1.png.png" id="3_jlpdk"]
-[ext_resource type="Texture2D" uid="uid://bv07clnvikwhh" path="res://icon.svg" id="5_j7kgd"]
+[ext_resource type="Texture2D" uid="uid://ceejic3aw0mhf" path="res://Assets/Fossil_material.png" id="4_dcf0e"]
+[ext_resource type="Texture2D" uid="uid://bmuvx6cnx7dv8" path="res://Assets/the_real_shop.png" id="5_s6dbj"]
+[ext_resource type="Texture2D" uid="uid://dv7inp15motsl" path="res://Assets/world.png" id="6_yutoo"]
+[ext_resource type="Texture2D" uid="uid://b2bq4txetfynl" path="res://Assets/back.png" id="7_w8eyd"]
+[ext_resource type="Texture2D" uid="uid://co5b4adykyhju" path="res://Assets/auto_click.png" id="8_bv2lw"]
+[ext_resource type="Texture2D" uid="uid://dcyt62d0osbu1" path="res://Assets/shop.png" id="9_c2u35"]
+[ext_resource type="Texture2D" uid="uid://o4webwck415e" path="res://Assets/magnet.png" id="10_n412y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wueub"]
 bg_color = Color(1, 1, 1, 1)
@@ -15,8 +21,15 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 shadow_color = Color(0.607843, 0.607843, 0.607843, 0.6)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3f6n1"]
+radius = 9.05539
+
 [node name="Sticks_and_Stones" type="Node2D"]
 script = ExtResource("1_osq1k")
+
+[node name="Fossil_spawn_timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
 [node name="Stick_spawn_timer" type="Timer" parent="."]
 wait_time = 0.75
@@ -51,6 +64,45 @@ grow_vertical = 2
 texture = ExtResource("3_jlpdk")
 
 [node name="Label" type="Label" parent="Stone_panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -39.0
+offset_right = 55.0
+offset_bottom = 39.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7tlbq")
+text = "x0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fossil_panel" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 0.231373)
+offset_left = 153.0
+offset_right = 254.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wueub")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Fossil_panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_dcf0e")
+
+[node name="Label" type="Label" parent="Fossil_panel"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -88,6 +140,7 @@ grow_vertical = 2
 texture = ExtResource("3_4t7gx")
 
 [node name="Label" type="Label" parent="Stick_panel"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -111,24 +164,52 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 537.0
-offset_top = 143.0
+offset_top = 144.0
 offset_right = 640.0
-offset_bottom = 194.0
+offset_bottom = 195.0
 grow_horizontal = 0
 grow_vertical = 2
-metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Upgrades"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 25.0
-offset_bottom = 77.0
+offset_top = -24.0
+offset_right = 921.0
+offset_bottom = 949.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.4)
-texture = ExtResource("5_j7kgd")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_s6dbj")
+
+[node name="Overworld" type="TextureButton" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 145.0
+offset_right = 103.0
+offset_bottom = 196.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Overworld"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -23.0
+offset_right = 920.0
+offset_bottom = 950.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_yutoo")
 
 [node name="Back" type="TextureButton" parent="."]
 anchors_preset = 6
@@ -136,10 +217,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 640.0
-offset_top = 143.0
-offset_right = 743.0
-offset_bottom = 194.0
+offset_left = 693.0
+offset_top = 169.0
+offset_right = 693.0
+offset_bottom = 169.0
 grow_horizontal = 0
 grow_vertical = 2
 metadata/_edit_group_ = true
@@ -149,12 +230,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 25.0
-offset_bottom = 77.0
+offset_left = -52.0
+offset_top = -49.0
+offset_right = 972.0
+offset_bottom = 975.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.4)
-texture = ExtResource("5_j7kgd")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_w8eyd")
 
 [node name="Hover_mode" type="TextureButton" parent="."]
 anchors_preset = 6
@@ -175,12 +258,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 25.0
-offset_bottom = 77.0
+offset_top = -24.0
+offset_right = 921.0
+offset_bottom = 949.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.4)
-texture = ExtResource("5_j7kgd")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_bv2lw")
 
 [node name="Spawn_rate" type="TextureButton" parent="."]
 anchors_preset = 6
@@ -201,14 +285,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 25.0
-offset_bottom = 77.0
+offset_top = -24.0
+offset_right = 921.0
+offset_bottom = 949.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.4)
-texture = ExtResource("5_j7kgd")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_c2u35")
 
-[node name="Spawn_rate2" type="TextureButton" parent="."]
+[node name="Magnet_size" type="TextureButton" parent="."]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -222,22 +307,30 @@ grow_horizontal = 0
 grow_vertical = 2
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Spawn_rate2"]
+[node name="TextureRect" type="TextureRect" parent="Magnet_size"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 25.0
-offset_bottom = 77.0
+offset_top = -24.0
+offset_right = 921.0
+offset_bottom = 949.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.4)
-texture = ExtResource("5_j7kgd")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_n412y")
 
+[node name="Mouse_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_area"]
+shape = SubResource("CircleShape2D_3f6n1")
+
+[connection signal="timeout" from="Fossil_spawn_timer" to="." method="_on_fossil_spawn_timer_timeout"]
 [connection signal="timeout" from="Stick_spawn_timer" to="." method="_on_stick_spawn_timer_timeout"]
 [connection signal="timeout" from="Stone_spawn_timer" to="." method="_on_stone_spawn_timer_timeout"]
 [connection signal="button_down" from="Upgrades" to="." method="_on_upgrades_button_down"]
+[connection signal="button_down" from="Overworld" to="." method="_on_overworld_button_down"]
 [connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
 [connection signal="button_down" from="Hover_mode" to="." method="_on_hover_mode_button_down"]
 [connection signal="button_down" from="Spawn_rate" to="." method="_on_spawn_rate_button_down"]
-[connection signal="button_down" from="Spawn_rate2" to="." method="_on_spawn_rate_2_button_down"]
+[connection signal="button_down" from="Magnet_size" to="." method="_on_magnet_size_button_down"]
