@@ -1,7 +1,5 @@
 extends Sprite2D
 
-
-
 @onready var mouse = get_parent().get_node("Mouse_area")
 var clicked = false
 var speed = 3
