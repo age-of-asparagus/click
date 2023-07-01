@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://desrfuxxfdiqd"]
+[gd_scene load_steps=7 format=3 uid="uid://desrfuxxfdiqd"]
 
 [ext_resource type="Texture2D" uid="uid://d38qithmo447d" path="res://Assets/test_grass.png" id="1_56jsv"]
 [ext_resource type="PackedScene" uid="uid://bnxk250itntev" path="res://character.tscn" id="3_r33um"]
 [ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="4_3c70p"]
 [ext_resource type="Texture2D" uid="uid://b2rnhoxom400x" path="res://Assets/Tree_1.png" id="4_emnnw"]
-[ext_resource type="PackedScene" uid="uid://cr0bf2jkb3cav" path="res://UI/Target.tscn" id="4_s71j7"]
-[ext_resource type="PackedScene" uid="uid://b1a4rr8aancd" path="res://ClickerObject.tscn" id="5_a3yow"]
+[ext_resource type="PackedScene" uid="uid://88j620xo565l" path="res://ClickerObject.tscn" id="5_a3yow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s10l6"]
 radius = 8.01561
@@ -20,13 +19,11 @@ position = Vector2(66, 48.5)
 scale = Vector2(1.14062, 0.882812)
 texture = ExtResource("1_56jsv")
 
-[node name="Target" parent="." instance=ExtResource("4_s71j7")]
-visible = false
-
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Character" parent="YSort" instance=ExtResource("3_r33um")]
+position = Vector2(289, 169)
 
 [node name="BerryBush" type="Sprite2D" parent="YSort"]
 position = Vector2(381, 233)
@@ -62,3 +59,4 @@ shape = SubResource("CircleShape2D_s10l6")
 
 [node name="ClickerObject" parent="YSort" instance=ExtResource("5_a3yow")]
 position = Vector2(514, 267)
+collision_layer = 32

@@ -1,35 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnxk250itntev"]
+[gd_scene load_steps=7 format=3 uid="uid://bnxk250itntev"]
 
 [ext_resource type="Script" path="res://Character.gd" id="1_wojax"]
-[ext_resource type="Texture2D" uid="uid://c7pqdb0eo2j4p" path="res://Assets/Pickaxe_item.png" id="2_acctd"]
+[ext_resource type="PackedScene" uid="uid://b6jvrrjyywqat" path="res://Weapons/Rock.tscn" id="2_lkiax"]
+[ext_resource type="Texture2D" uid="uid://bv07clnvikwhh" path="res://icon.svg" id="3_pm0wf"]
+[ext_resource type="Texture2D" uid="uid://vd3un27assnc" path="res://Assets/Stone_material-1.png.png" id="4_ja75j"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xmpn"]
-height = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfdxv"]
+size = Vector2(58, 58)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jq2qw"]
+radius = 20.0998
 
 [node name="Character" type="CharacterBody2D"]
-position = Vector2(199, 176)
-scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_wojax")
-metadata/_edit_group_ = true
+Ammo = ExtResource("2_lkiax")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-rotation = -0.565487
-texture = ExtResource("2_acctd")
+modulate = Color(1, 0, 1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_pm0wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -4)
-shape = SubResource("CapsuleShape2D_1xmpn")
+shape = SubResource("RectangleShape2D_kfdxv")
 
 [node name="ClickerDetector" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 32
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickerDetector"]
-position = Vector2(-1, -4)
 shape = SubResource("CircleShape2D_jq2qw")
+
+[node name="Hand" type="Marker2D" parent="."]
+position = Vector2(32, -21)
+
+[node name="StoneMaterial-1png" type="Sprite2D" parent="Hand"]
+texture = ExtResource("4_ja75j")
 
 [connection signal="area_shape_entered" from="ClickerDetector" to="." method="_on_clicker_detector_area_shape_entered"]
