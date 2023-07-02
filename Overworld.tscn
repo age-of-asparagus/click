@@ -19,7 +19,7 @@ script = ExtResource("1_es3p2")
 Mob = ExtResource("7_e6l07")
 
 [node name="SpawnTimer" type="Timer" parent="SpawnManager"]
-wait_time = 2.0
+wait_time = 1.5
 autostart = true
 
 [node name="TestGrass" type="Sprite2D" parent="."]
