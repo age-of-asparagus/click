@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 200
 @export var Ammo : PackedScene
+@export var health := 10
 
 var rotation_direction = 0
 var movement_direction = 0
@@ -24,6 +25,14 @@ func shoot():
 		projectile.global_transform = $Hand.global_transform
 		Global.stones -= 1
 
-func _on_clicker_detector_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_detector_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	print("Clicker!")
 	get_tree().change_scene_to_file("res://sticks_and_stones.tscn")
+
+
+func _on_detector_body_entered(body):
+	print("OUCH!")
+	body.queue_free()
+	health -= 1
+	print("Health: " + str(health))
+	

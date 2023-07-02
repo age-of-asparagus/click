@@ -1,16 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://desrfuxxfdiqd"]
+[gd_scene load_steps=9 format=3 uid="uid://desrfuxxfdiqd"]
 
 [ext_resource type="Texture2D" uid="uid://d38qithmo447d" path="res://Assets/test_grass.png" id="1_56jsv"]
+[ext_resource type="Script" path="res://SpawnManager.gd" id="1_es3p2"]
 [ext_resource type="PackedScene" uid="uid://bnxk250itntev" path="res://character.tscn" id="3_r33um"]
 [ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="4_3c70p"]
 [ext_resource type="Texture2D" uid="uid://b2rnhoxom400x" path="res://Assets/Tree_1.png" id="4_emnnw"]
 [ext_resource type="PackedScene" uid="uid://88j620xo565l" path="res://ClickerObject.tscn" id="5_a3yow"]
+[ext_resource type="PackedScene" uid="uid://5xywpu5bhsbq" path="res://Mobs/mob.tscn" id="7_e6l07"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s10l6"]
 radius = 8.01561
 
 [node name="Overworld" type="Node2D"]
 texture_filter = 1
+
+[node name="SpawnManager" type="Node2D" parent="."]
+script = ExtResource("1_es3p2")
+Mob = ExtResource("7_e6l07")
+
+[node name="SpawnTimer" type="Timer" parent="SpawnManager"]
+wait_time = 2.0
+autostart = true
 
 [node name="TestGrass" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -60,3 +70,8 @@ shape = SubResource("CircleShape2D_s10l6")
 [node name="ClickerObject" parent="YSort" instance=ExtResource("5_a3yow")]
 position = Vector2(514, 267)
 collision_layer = 32
+
+[node name="BaseMob" parent="YSort" instance=ExtResource("7_e6l07")]
+position = Vector2(394, 100)
+
+[connection signal="timeout" from="SpawnManager/SpawnTimer" to="SpawnManager" method="_on_spawn_timer_timeout"]

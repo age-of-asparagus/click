@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://5xywpu5bhsbq"]
+
+[ext_resource type="Script" path="res://Mobs/mob.gd" id="1_0cqpa"]
+[ext_resource type="Texture2D" uid="uid://bv07clnvikwhh" path="res://icon.svg" id="1_0egia"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6f6gu"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btjwt"]
+radius = 14.0
+
+[node name="BaseMob" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 14
+script = ExtResource("1_0cqpa")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_0egia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6f6gu")
+
+[node name="WeaponDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponDetector"]
+shape = SubResource("CircleShape2D_btjwt")
+
+[connection signal="area_shape_entered" from="WeaponDetector" to="." method="_on_weapon_detector_area_shape_entered"]
