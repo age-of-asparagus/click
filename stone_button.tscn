@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -18,13 +18,13 @@ tracks/0/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_f02gc"]
+[sub_resource type="Animation" id="Animation_oscxp"]
 resource_name = "size"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,46 +37,43 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5ax1x"]
 _data = {
 "RESET": SubResource("Animation_r14pj"),
-"size": SubResource("Animation_f02gc")
+"size": SubResource("Animation_oscxp")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bak0"]
 radius = 13.0
 
-[node name="Stone" type="Sprite2D"]
-texture_filter = 1
-position = Vector2(14, 10)
-texture = ExtResource("2_iqjpu")
-script = ExtResource("1_avf5j")
-metadata/_edit_group_ = true
-
-[node name="Stone_button" type="TextureButton" parent="."]
+[node name="Stone_button" type="TextureButton"]
 show_behind_parent = true
+texture_filter = 1
 anchors_preset = -1
 anchor_left = 0.281
 anchor_top = 0.344
 anchor_right = 0.281
 anchor_bottom = 0.344
-offset_left = -31.984
-offset_top = -32.016
-offset_right = -4.984
-offset_bottom = -12.016
+offset_left = -211.84
+offset_top = -155.84
+offset_right = -147.84
+offset_bottom = -91.84
 size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("2_iqjpu")
+script = ExtResource("1_avf5j")
 
 [node name="Disappear timer" type="Timer" parent="."]
 wait_time = 1.25
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Stone_button")
 libraries = {
 "": SubResource("AnimationLibrary_5ax1x")
 }
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(32, 32)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0bak0")
 
-[connection signal="button_down" from="Stone_button" to="." method="_on_stone_button_button_down"]
+[connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="timeout" from="Disappear timer" to="." method="_on_disappear_timer_timeout"]

@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -18,13 +18,13 @@ tracks/0/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_wmlac"]
+[sub_resource type="Animation" id="Animation_gkik0"]
 resource_name = "size"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,39 +37,29 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nyvr1"]
 _data = {
 "RESET": SubResource("Animation_w7mho"),
-"size": SubResource("Animation_wmlac")
+"size": SubResource("Animation_gkik0")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn0jt"]
 size = Vector2(35, 7)
 
-[node name="Stick" type="Sprite2D"]
+[node name="Stick_button" type="TextureButton"]
 texture_filter = 1
-position = Vector2(3, 4)
-texture = ExtResource("2_k8vuv")
+anchors_preset = -1
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_k8vuv")
 script = ExtResource("1_3wxgu")
-metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Stick_button")
 libraries = {
 "": SubResource("AnimationLibrary_nyvr1")
 }
-
-[node name="Stick_button" type="TextureButton" parent="."]
-anchors_preset = -1
-anchor_left = 0.662
-anchor_top = 0.22575
-anchor_right = 0.662
-anchor_bottom = 0.22575
-offset_left = -58.368
-offset_top = -7.448
-offset_right = -22.368
-offset_bottom = 2.552
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.749397
-metadata/_edit_use_anchors_ = true
 
 [node name="Disappear timer" type="Timer" parent="."]
 wait_time = 1.5
@@ -77,10 +67,13 @@ one_shot = true
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(32, 32)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.90735e-06, 3.05176e-05)
 rotation = -0.757164
 shape = SubResource("RectangleShape2D_mn0jt")
 
-[connection signal="button_down" from="Stick_button" to="." method="_on_stick_button_button_down"]
+[connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="timeout" from="Disappear timer" to="." method="_on_disappear_timer_timeout"]

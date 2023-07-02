@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ftcfdpkpncf6"]
+
+[node name="Blank" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Disappear_timer" type="Timer" parent="."]
