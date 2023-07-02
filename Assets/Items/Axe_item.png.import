@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckmewqimf2mo6"
-path="res://.godot/imported/Diamond_material.png-7c87057abe3d9abd62ebdffbea5a82a5.ctex"
+uid="uid://dvaa4phb84m6o"
+path="res://.godot/imported/Axe_item.png-feddbb2626d1aecf6b27148364050e27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Diamond_material.png"
-dest_files=["res://.godot/imported/Diamond_material.png-7c87057abe3d9abd62ebdffbea5a82a5.ctex"]
+source_file="res://Assets/Items/Axe_item.png"
+dest_files=["res://.godot/imported/Axe_item.png-feddbb2626d1aecf6b27148364050e27.ctex"]
 
 [params]
 

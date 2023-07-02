@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j7ro4h38gf4b"
-path="res://.godot/imported/tree_with_bush.png-61071280123711b4c5ff137d5193bb97.ctex"
+uid="uid://bn8hi5p4tawdd"
+path="res://.godot/imported/Sapphire.png-bb5dcf1740f5fba1d3f0e72027325fcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tree_with_bush.png"
-dest_files=["res://.godot/imported/tree_with_bush.png-61071280123711b4c5ff137d5193bb97.ctex"]
+source_file="res://Assets/Materials/Sapphire.png"
+dest_files=["res://.godot/imported/Sapphire.png-bb5dcf1740f5fba1d3f0e72027325fcc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqm7koag71jgr"
-path="res://.godot/imported/Stick_material-1.png.png-4a64b9d900ea28a0a8a14a44b018626e.ctex"
+uid="uid://c7pqdb0eo2j4p"
+path="res://.godot/imported/Pickaxe_item.png-377c4bd7ab04ab399442bc5e40f1743e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Stick_material-1.png.png"
-dest_files=["res://.godot/imported/Stick_material-1.png.png-4a64b9d900ea28a0a8a14a44b018626e.ctex"]
+source_file="res://Assets/Items/Pickaxe_item.png"
+dest_files=["res://.godot/imported/Pickaxe_item.png-377c4bd7ab04ab399442bc5e40f1743e.ctex"]
 
 [params]
 

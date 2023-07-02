@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clvlilqfj6uik"
-path="res://.godot/imported/berry_bush.png-6bfce1139e15f5ee2d5b7d477cf484c9.ctex"
+uid="uid://dly7erhgmdo5j"
+path="res://.godot/imported/Zombie_walk_1.png-8695ca5ef204cd9d0d370c3271007fda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/berry_bush.png"
-dest_files=["res://.godot/imported/berry_bush.png-6bfce1139e15f5ee2d5b7d477cf484c9.ctex"]
+source_file="res://Assets/Enemies/Zombie_walk_1.png"
+dest_files=["res://.godot/imported/Zombie_walk_1.png-8695ca5ef204cd9d0d370c3271007fda.ctex"]
 
 [params]
 

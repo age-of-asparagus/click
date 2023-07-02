@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://desrfuxxfdiqd"]
 
-[ext_resource type="Texture2D" uid="uid://d38qithmo447d" path="res://Assets/test_grass.png" id="1_56jsv"]
 [ext_resource type="Script" path="res://SpawnManager.gd" id="1_es3p2"]
+[ext_resource type="Texture2D" uid="uid://d38qithmo447d" path="res://Assets/Decoration/test_grass.png" id="3_6tp6e"]
 [ext_resource type="PackedScene" uid="uid://bnxk250itntev" path="res://character.tscn" id="3_r33um"]
-[ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/berry_bush.png" id="4_3c70p"]
-[ext_resource type="Texture2D" uid="uid://b2rnhoxom400x" path="res://Assets/Tree_1.png" id="4_emnnw"]
 [ext_resource type="PackedScene" uid="uid://88j620xo565l" path="res://ClickerObject.tscn" id="5_a3yow"]
+[ext_resource type="Texture2D" uid="uid://clvlilqfj6uik" path="res://Assets/Decoration/berry_bush.png" id="5_rgpqr"]
+[ext_resource type="Texture2D" uid="uid://b2rnhoxom400x" path="res://Assets/Decoration/Tree_1.png" id="6_psbex"]
 [ext_resource type="PackedScene" uid="uid://5xywpu5bhsbq" path="res://Mobs/mob.tscn" id="7_e6l07"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s10l6"]
@@ -27,7 +27,7 @@ texture_filter = 1
 texture_repeat = 2
 position = Vector2(66, 48.5)
 scale = Vector2(1.14062, 0.882812)
-texture = ExtResource("1_56jsv")
+texture = ExtResource("3_6tp6e")
 
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -38,7 +38,7 @@ position = Vector2(289, 169)
 [node name="BerryBush" type="Sprite2D" parent="YSort"]
 position = Vector2(381, 233)
 scale = Vector2(2, 2)
-texture = ExtResource("4_3c70p")
+texture = ExtResource("5_rgpqr")
 region_enabled = true
 region_rect = Rect2(0, 21.8917, 47.5, 42.1607)
 metadata/_edit_group_ = true
@@ -55,7 +55,7 @@ shape = SubResource("CircleShape2D_s10l6")
 [node name="Tree_2" type="Sprite2D" parent="YSort"]
 position = Vector2(141, 86)
 scale = Vector2(2, 2)
-texture = ExtResource("4_emnnw")
+texture = ExtResource("6_psbex")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="YSort/Tree_2"]
 position = Vector2(-6.5, 18.5)

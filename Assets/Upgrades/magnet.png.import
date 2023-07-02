@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1xk1adgphpio"
-path="res://.godot/imported/Emerald_material.png-81aa9373cf45594aac6fa2cc9ce04bfc.ctex"
+uid="uid://o4webwck415e"
+path="res://.godot/imported/magnet.png-26dd6243262855124052d453f93d02d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Emerald_material.png"
-dest_files=["res://.godot/imported/Emerald_material.png-81aa9373cf45594aac6fa2cc9ce04bfc.ctex"]
+source_file="res://Assets/Upgrades/magnet.png"
+dest_files=["res://.godot/imported/magnet.png-26dd6243262855124052d453f93d02d5.ctex"]
 
 [params]
 

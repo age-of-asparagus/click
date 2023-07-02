@@ -4,6 +4,7 @@ var Stick = preload("res://stick_button.tscn")
 var Stone = preload("res://stone_button.tscn")
 var Fossil = preload("res://fossil_button.tscn")
 
+var transitioning = false
 var rng = RandomNumberGenerator.new()
 
 func _ready():
@@ -48,11 +49,14 @@ func _on_stick_spawn_timer_timeout():
 
 
 func _on_upgrades_button_down():
-	$Camera2D.global_position.x = 960
+	if transitioning == false:
+		transitioning = true
+		$AnimationPlayer.play("Camera_transition")
+		tr
 
 
 func _on_back_button_down():
-	$Camera2D.global_position.x = 320
+	$AnimationPlayer.play("Camera_transition_back")
 
 
 func _on_hover_mode_button_down():

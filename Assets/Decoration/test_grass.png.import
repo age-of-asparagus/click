@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmuvx6cnx7dv8"
-path="res://.godot/imported/the_real_shop.png-a864c843bf62732be7ce2f8ac9d4d0ba.ctex"
+uid="uid://d38qithmo447d"
+path="res://.godot/imported/test_grass.png-40181127bd5dd08eddf3c31c9f00018c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/the_real_shop.png"
-dest_files=["res://.godot/imported/the_real_shop.png-a864c843bf62732be7ce2f8ac9d4d0ba.ctex"]
+source_file="res://Assets/Decoration/test_grass.png"
+dest_files=["res://.godot/imported/test_grass.png-40181127bd5dd08eddf3c31c9f00018c.ctex"]
 
 [params]
 

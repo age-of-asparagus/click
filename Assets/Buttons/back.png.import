@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vd3un27assnc"
-path="res://.godot/imported/Stone_material-1.png.png-d7c2efaf6662b49533ed7de38b59d94c.ctex"
+uid="uid://b2bq4txetfynl"
+path="res://.godot/imported/back.png-5294c64f43d23319d51348b8b65562d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Stone_material-1.png.png"
-dest_files=["res://.godot/imported/Stone_material-1.png.png-d7c2efaf6662b49533ed7de38b59d94c.ctex"]
+source_file="res://Assets/Buttons/back.png"
+dest_files=["res://.godot/imported/back.png-5294c64f43d23319d51348b8b65562d1.ctex"]
 
 [params]
 

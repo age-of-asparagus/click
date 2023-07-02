@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvaa4phb84m6o"
-path="res://.godot/imported/Axe_item.png-2186bd50511289e9574a87d6146e896f.ctex"
+uid="uid://dhymbwnaf6ike"
+path="res://.godot/imported/Zombie_walk_2.png-a3c5f1025b5b25f37a1e66fc72d8a476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Axe_item.png"
-dest_files=["res://.godot/imported/Axe_item.png-2186bd50511289e9574a87d6146e896f.ctex"]
+source_file="res://Assets/Enemies/Zombie_walk_2.png"
+dest_files=["res://.godot/imported/Zombie_walk_2.png-a3c5f1025b5b25f37a1e66fc72d8a476.ctex"]
 
 [params]
 

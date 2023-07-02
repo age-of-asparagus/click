@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://iwar6ajg1bvl"]
 
-[ext_resource type="Texture2D" uid="uid://ceejic3aw0mhf" path="res://Assets/Fossil_material.png" id="1_u0cym"]
+[ext_resource type="Texture2D" uid="uid://ceejic3aw0mhf" path="res://Assets/Materials/Fossil_material.png" id="1_6teh7"]
 [ext_resource type="Script" path="res://Fossil.gd" id="2_j4xx3"]
 
 [sub_resource type="Animation" id="Animation_r43ft"]
@@ -48,7 +48,7 @@ offset_left = -15.0
 offset_top = -14.0
 offset_right = 17.0
 offset_bottom = 18.0
-texture_normal = ExtResource("1_u0cym")
+texture_normal = ExtResource("1_6teh7")
 script = ExtResource("2_j4xx3")
 
 [node name="Disappear_timer" type="Timer" parent="."]

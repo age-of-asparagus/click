@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn8hi5p4tawdd"
-path="res://.godot/imported/Sapphire.png-275399558f0116e1d223f90319f34753.ctex"
+uid="uid://vd3un27assnc"
+path="res://.godot/imported/Stone_material-1.png.png-5fedf3913b942274723888a13df24e43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sapphire.png"
-dest_files=["res://.godot/imported/Sapphire.png-275399558f0116e1d223f90319f34753.ctex"]
+source_file="res://Assets/Materials/Stone_material-1.png.png"
+dest_files=["res://.godot/imported/Stone_material-1.png.png-5fedf3913b942274723888a13df24e43.ctex"]
 
 [params]
 

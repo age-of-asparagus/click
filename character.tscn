@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Character.gd" id="1_wojax"]
 [ext_resource type="PackedScene" uid="uid://b6jvrrjyywqat" path="res://Weapons/Rock.tscn" id="2_lkiax"]
 [ext_resource type="Texture2D" uid="uid://bv07clnvikwhh" path="res://icon.svg" id="3_pm0wf"]
-[ext_resource type="Texture2D" uid="uid://vd3un27assnc" path="res://Assets/Stone_material-1.png.png" id="4_ja75j"]
+[ext_resource type="Texture2D" uid="uid://vd3un27assnc" path="res://Assets/Materials/Stone_material-1.png.png" id="4_1alm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfdxv"]
 size = Vector2(58, 58)
@@ -36,7 +36,7 @@ shape = SubResource("CircleShape2D_jq2qw")
 position = Vector2(32, -21)
 
 [node name="StoneMaterial-1png" type="Sprite2D" parent="Hand"]
-texture = ExtResource("4_ja75j")
+texture = ExtResource("4_1alm7")
 
 [connection signal="area_shape_entered" from="Detector" to="." method="_on_detector_area_shape_entered"]
 [connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]

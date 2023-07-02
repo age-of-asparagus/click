@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx1dwnivrcm7x"
-path="res://.godot/imported/bush.png-5849fb30d003a9d82c267aaa5bd38fdc.ctex"
+uid="uid://ckmewqimf2mo6"
+path="res://.godot/imported/Diamond_material.png-10e753d164786bd7217bd271f946448e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bush.png"
-dest_files=["res://.godot/imported/bush.png-5849fb30d003a9d82c267aaa5bd38fdc.ctex"]
+source_file="res://Assets/Materials/Diamond_material.png"
+dest_files=["res://.godot/imported/Diamond_material.png-10e753d164786bd7217bd271f946448e.ctex"]
 
 [params]
 
